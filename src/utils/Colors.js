@@ -6,5 +6,5 @@ export default {
   Secondary: "#5fa1d7",
   SecondaryLight: "#93d2ff",
   SecondaryDark: "#2473a5",
-  SecondaryText: "#f2f2f2"
+  SecondaryText: "#4d4d4d"
 };

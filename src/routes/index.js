@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import SignIn from "../pages/SignIn";
 import HomeRouter from "../routes/Home.routes";
+import TicketDetail from "../pages/TicketDetail";
 
 const Stack = createStackNavigator();
 export default function Router({ state }) {
@@ -12,10 +13,14 @@ export default function Router({ state }) {
         headerShown: false
       }}
     >
-      <Stack.Screen
-        name={!state.userToken ? "Home" : "SignIn"}
-        component={!state.userToken ? HomeRouter : SignIn}
-      />
+      {!state.userToken ? (
+        <>
+          <Stack.Screen name="Home" component={HomeRouter} />
+          <Stack.Screen name="TicketDetail" component={TicketDetail} />
+        </>
+      ) : (
+        <Stack.Screen name="SignIn" component={SignIn} />
+      )}
     </Stack.Navigator>
   );
 }
