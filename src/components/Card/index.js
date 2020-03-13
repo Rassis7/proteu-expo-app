@@ -7,15 +7,14 @@ import {
   CardTitle,
   CardTextContainer
 } from "./styles";
-import { Text } from "react-native";
 
-const Card = React.memo(() => (
-  <Container>
-    <CardContent>
-      <CardTitle>Romulo Assis</CardTitle>
+const Card = React.memo(({ error }) => (
+  <Container error={error}>
+    <CardContent error={error}>
+      <CardTitle error={error}>Romulo Assis</CardTitle>
 
       <CardTextContainer>
-        <CardText size={3}>Convite: 112as561a615a6</CardText>
+        {!error && <CardText size={3}>Convite: 112as561a615a6</CardText>}
         <CardText size={2.6}>Hora da leitura: 20:25</CardText>
       </CardTextContainer>
     </CardContent>

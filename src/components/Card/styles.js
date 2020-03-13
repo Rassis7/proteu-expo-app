@@ -10,17 +10,21 @@ export const Container = styled.View`
 `;
 
 export const CardContent = styled.View`
-  background-color: #dddd;
-  height: ${getHeight(18)}px;
-  width: ${getWidth(95)}px;
+  background-color: ${({ error }) => (!error ? "#eee" : "#ddd")};
+  width: ${getWidth(98)}px;
   border-radius: 10px;
   padding: 15px;
+  border-width: 1px;
+
+  ${({ error }) => !error && `height: ${getHeight(18)}px;`}
+  border-color: ${({ error }) =>
+    !error ? Colors.SecondaryDark : Colors.ErrorColor};
 `;
 
 export const CardTitle = styled.Text`
   font-size: ${getHeight(3.5)}px;
   font-weight: bold;
-  color: ${Colors.SecondaryDark};
+  color: ${({ error }) => (!error ? Colors.SecondaryDark : Colors.ErrorColor)};
 `;
 
 export const CardTextContainer = styled.View`
@@ -28,7 +32,7 @@ export const CardTextContainer = styled.View`
 `;
 
 export const CardText = styled.Text`
-  font-size: ${props => getHeight(props.size)}px;
+  font-size: ${({ size }) => getHeight(size)}px;
   color: ${Colors.SecondaryText};
 `;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import {
   Container,
@@ -7,9 +7,7 @@ import {
   ButtonContainer,
   StyledBaseButton
 } from "./styles";
-import { TextBaseButton } from "../../styles/global";
 import Colors from "../../utils/Colors";
-import { useNavigation } from "@react-navigation/native";
 
 export default function TicketDatail() {
   const navigate = useNavigation();
@@ -20,17 +18,15 @@ export default function TicketDatail() {
 
       <ButtonContainer>
         <StyledBaseButton
-          background="#fff"
-          borderColor={Colors.PrimaryDark}
+          onPress={() => navigate.goBack()}
+          background={Colors.PrimaryLight}
           w={80}
           h={7}
           mb={2}
-          borderRadius={0.5}
-          onPress={() => navigate.goBack()}
+          fontSize={3}
+          color={Colors.PrimaryText}
         >
-          <TextBaseButton fontSize={3} color={Colors.PrimaryDark}>
-            Voltar
-          </TextBaseButton>
+          Voltar
         </StyledBaseButton>
       </ButtonContainer>
     </Container>

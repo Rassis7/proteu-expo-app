@@ -11,7 +11,7 @@ export default function TiketList() {
     <View>
       <HeaderTicketList />
       <TouchableOpacity onPress={() => navigation.navigate("TicketDetail")}>
-        <Card />
+        <Card error />
       </TouchableOpacity>
 
       <Card />

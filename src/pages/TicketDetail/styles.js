@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
 
 import { getHeight } from "../../utils/Dimensions";
-import { BaseButton } from "../../styles/global";
+import Button from "../../components/Button";
 
 export const Container = styled.View`
   flex: 1;
@@ -20,7 +20,7 @@ export const ButtonContainer = styled.View`
   align-items: center;
 `;
 
-export const StyledBaseButton = styled(BaseButton)`
+export const StyledBaseButton = styled(Button)`
   position: absolute;
   bottom: 0;
 `;
