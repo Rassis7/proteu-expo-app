@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { getWidth } from "../../utils/Dimensions";
+import { getWidth, getHeight } from "../../utils/Dimensions";
 import { BarCodeScanner } from "expo-barcode-scanner";
 
 export const Container = styled.View`
@@ -7,7 +7,7 @@ export const Container = styled.View`
 `;
 
 export const BarCodeScannerContainer = styled(BarCodeScanner)`
-  ${props => props.absoluteFill}
+  ${({ absoluteFill }) => absoluteFill}
   flex: 1;
   height: 100%;
   margin: 0;
