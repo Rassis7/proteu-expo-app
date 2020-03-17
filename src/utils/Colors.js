@@ -7,5 +7,7 @@ export default {
   SecondaryLight: "#93d2ff",
   SecondaryDark: "#2473a5",
   SecondaryText: "#4d4d4d",
-  ErrorColor: "#b22222"
+  ErrorColor: "#b22222",
+  SuccessColor: "#0fc06a",
+  FailColor: "#ff7761"
 };

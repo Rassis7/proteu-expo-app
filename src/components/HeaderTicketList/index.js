@@ -10,10 +10,11 @@ import {
   TextQtdRight,
   Space
 } from "./styles";
+import Colors from "../../utils/Colors";
 
 export default function HeaderTicketList() {
   return (
-    <Dashboard background="#416DF8" height={31}>
+    <Dashboard background={Colors.Primary} height={30}>
       <ViewInfos>
         <TextTotal>Lidos</TextTotal>
         <TextQtdTotal>20</TextQtdTotal>

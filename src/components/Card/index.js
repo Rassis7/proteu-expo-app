@@ -8,14 +8,18 @@ import {
   CardTextContainer
 } from "./styles";
 
-const Card = React.memo(({ error }) => (
-  <Container error={error}>
-    <CardContent error={error}>
-      <CardTitle error={error}>Romulo Assis</CardTitle>
+const Card = React.memo(({ props }) => (
+  <Container error={props?.error}>
+    <CardContent error={props?.error}>
+      <CardTitle error={props?.error}>{props.name}</CardTitle>
 
       <CardTextContainer>
-        {!error && <CardText size={3}>Convite: 112as561a615a6</CardText>}
-        <CardText size={2.6}>Hora da leitura: 20:25</CardText>
+        {!props?.error && (
+          <CardText size={2.3}>Convite: {props.ticketId}</CardText>
+        )}
+        <CardText size={2.3}>
+          Hora da leitura: {props.createdAt.toString()}
+        </CardText>
       </CardTextContainer>
     </CardContent>
   </Container>

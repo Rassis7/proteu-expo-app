@@ -2,6 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styled from "styled-components";
+import { View } from "react-native";
 
 import Colors from "../utils/Colors";
 import Scanner from "../pages/Scanner";
@@ -18,6 +19,7 @@ const IconScannerContainer = styled.View`
   background-color: #fff;
   justify-content: center;
   align-items: center;
+  margin-bottom: ${getHeight(0.1)}px;
 `;
 
 export default function HomeRouter() {
@@ -34,7 +36,6 @@ export default function HomeRouter() {
         name="TiketList"
         component={TiketList}
         options={{
-          tabBarLabel: "Lista",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="format-list-checks"
@@ -49,13 +50,12 @@ export default function HomeRouter() {
         component={Scanner}
         options={{
           header: { visible: false },
-          tabBarIcon: ({ color }) => (
-            <IconScannerContainer size={9}>
+          tabBarIcon: ({ color, size }) => (
+            <IconScannerContainer size={7}>
               <MaterialCommunityIcons
                 name="qrcode-scan"
                 color={color}
-                size={45}
-                style={{ marginBottom: 15 }}
+                size={40}
               />
             </IconScannerContainer>
           )
